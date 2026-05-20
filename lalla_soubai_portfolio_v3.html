@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Lalla Soubai — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--blush:#f2cfc4;--teal:#72b5b7;--salmon:#f5a58e;--mint:#b8d4d0;--amber:#e8b84b;--ink:#1a1a1a;--ink2:#2e2e2e;--muted:#888;--paper:#fdf8f5}
+body{background:var(--paper);color:var(--ink);font-family:'Space Grotesk',sans-serif;line-height:1.5}
+.wrap{max-width:860px;margin:0 auto;padding:0 1.5rem}
+nav{border-bottom:3px solid var(--ink);padding:1rem 0;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:2px;color:var(--teal)}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--muted);text-decoration:none;letter-spacing:1px;text-transform:uppercase}
+.nav-links a:hover{color:var(--teal)}
+.internship-bar{background:var(--teal);padding:1.6rem 0;border-bottom:3px solid var(--ink)}
+.avail-dot{width:14px;height:14px;border-radius:50%;background:var(--amber);flex-shrink:0;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.85)}}
+.internship-text{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;letter-spacing:4px;line-height:1;color:#fff}
+.internship-sub{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:rgba(255,255,255,0.65);letter-spacing:1px;margin-top:5px}
+.hero{padding:3rem 0 2.5rem;border-bottom:3px solid var(--ink)}
+.hero-row{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end}
+.hero-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,10vw,7rem);line-height:0.9;letter-spacing:2px;color:var(--ink)}
+.hero-name span{color:var(--salmon)}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:1rem;display:flex;align-items:center;gap:10px}
+.hero-tag::before{content:'';display:inline-block;width:24px;height:2px;background:var(--salmon)}
+.hero-meta{text-align:right}
+.hero-school{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;line-height:1;color:var(--teal)}
+.hero-school-sub{font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:4px}
+.hero-ms{display:inline-block;background:var(--amber);color:var(--ink);font-family:'Bebas Neue',sans-serif;font-size:1.1rem;padding:5px 14px;letter-spacing:2px;margin-top:8px}
+.section{padding:2.5rem 0;border-bottom:3px solid var(--ink)}
+.sec-label{font-family:'Bebas Neue',sans-serif;font-size:0.85rem;letter-spacing:4px;color:var(--muted);margin-bottom:1.4rem;text-transform:uppercase;display:flex;align-items:center;gap:12px}
+.sec-label::after{content:'';flex:1;height:2px;background:var(--mint)}
+.about-body{font-size:1rem;color:var(--ink2);line-height:1.85;max-width:640px}
+.about-body strong{font-weight:700;border-bottom:2px solid var(--salmon);padding-bottom:1px}
+.about-stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:2rem;border:2px solid var(--ink)}
+.stat{padding:1rem;border-right:2px solid var(--ink);text-align:center}
+.stat:last-child{border-right:none}
+.stat:nth-child(1){background:var(--blush)}.stat:nth-child(2){background:var(--mint)}.stat:nth-child(3){background:var(--salmon)}.stat:nth-child(4){background:var(--amber)}
+.stat-n{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--ink);line-height:1}
+.stat-l{font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--ink2);letter-spacing:1px;text-transform:uppercase;margin-top:4px;opacity:0.7}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));border:2px solid var(--ink)}
+.skill-item{padding:1.2rem;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.skill-item:nth-child(2n){border-right:none}.skill-item:nth-last-child(-n+2){border-bottom:none}
+.skill-item:nth-child(1){background:var(--blush)}.skill-item:nth-child(2){background:var(--mint)}.skill-item:nth-child(3){background:var(--salmon)}.skill-item:nth-child(4){background:var(--amber)}
+.skill-num{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:var(--ink);line-height:1;opacity:0.12}
+.skill-title{font-weight:700;font-size:0.9rem;margin:-0.4rem 0 0.4rem;color:var(--ink)}
+.skill-desc{font-family:'JetBrains Mono',monospace;font-size:0.67rem;color:var(--ink2);line-height:1.6;opacity:0.75}
+.skill-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:0.7rem}
+.stag{font-family:'JetBrains Mono',monospace;font-size:0.6rem;background:var(--ink);color:var(--paper);padding:2px 8px;letter-spacing:0.5px}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));border:2px solid var(--ink)}
+.proj-card{padding:1.4rem;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);background:var(--paper)}
+.proj-card:nth-child(2n){border-right:none}.proj-card:nth-last-child(-n+2){border-bottom:none}
+.proj-featured{border-left:5px solid var(--teal)}
+.proj-idx{font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:1px;color:var(--muted);margin-bottom:0.5rem;text-transform:uppercase}
+.proj-name{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:1px;line-height:1;margin-bottom:0.5rem;color:var(--ink)}
+.proj-desc{font-family:'JetBrains Mono',monospace;font-size:0.67rem;color:var(--muted);line-height:1.7;margin-bottom:1rem}
+.proj-link{font-family:'JetBrains Mono',monospace;font-size:0.67rem;color:var(--teal);text-decoration:none;border-bottom:1.5px solid var(--teal);padding-bottom:1px}
+.proj-link:hover{color:var(--salmon);border-color:var(--salmon)}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));border:2px solid var(--ink)}
+.c-item{padding:1.1rem 1.2rem;border-right:2px solid var(--ink);text-decoration:none;display:block;transition:filter 0.15s}
+.c-item:last-child{border-right:none}
+.c-item:nth-child(1){background:var(--blush)}.c-item:nth-child(2){background:var(--mint)}.c-item:nth-child(3){background:var(--salmon)}.c-item:nth-child(4){background:var(--amber)}
+.c-item:hover{filter:brightness(0.9)}
+.c-platform{font-family:'Bebas Neue',sans-serif;font-size:0.75rem;letter-spacing:3px;color:var(--ink2);margin-bottom:3px;opacity:0.6}
+.c-handle{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:700}
+footer{border-top:3px solid var(--ink);padding:1rem 0;display:flex;align-items:center;justify-content:space-between}
+.footer-l{font-family:'Bebas Neue',sans-serif;font-size:0.8rem;letter-spacing:3px;color:var(--muted)}
+.footer-r{font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--muted)}
+@media(max-width:600px){.hero-row{grid-template-columns:1fr}.hero-meta{text-align:left}.about-stats{grid-template-columns:repeat(2,1fr)}.about-stats .stat:nth-child(2){border-right:none}.about-stats .stat:nth-child(3){border-right:2px solid var(--ink)}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<nav>
+  <div class="nav-logo">LS</div>
+  <div class="nav-links">
+    <a href="#about">about</a>
+    <a href="#skills">skills</a>
+    <a href="#projects">projects</a>
+    <a href="#contact">contact</a>
+  </div>
+</nav>
+</div>
+
+<div class="internship-bar">
+  <div class="wrap" style="display:flex;align-items:center;gap:18px">
+    <span class="avail-dot"></span>
+    <div>
+      <div class="internship-text">AVAILABLE FOR INTERNSHIP</div>
+      <div class="internship-sub">lallasoubai0@gmail.com &nbsp;·&nbsp; 1337 @ 42 Network · Morocco</div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<section class="hero">
+  <div class="hero-row">
+    <div>
+      <div class="hero-name">LALLA<br><span>SOUBAI</span></div>
+      <div class="hero-tag">Systems · Security · Builder</div>
+    </div>
+    <div class="hero-meta">
+      <div class="hero-school">1337</div>
+      <div class="hero-school-sub">42 Network · Morocco</div>
+      <div class="hero-ms">MILESTONE 5</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="sec-label">00 — About</div>
+  <div class="about-body">
+    I'm a <strong>systems-focused developer</strong> passionate about understanding how things work at the lowest level — from raw TCP sockets to container orchestration. I learn by <strong>building from scratch</strong>: no shortcuts, no black boxes. The 42 peer-learning model fits me perfectly.
+    <br><br>
+    Outside the curriculum I train algorithms weekly on <strong>Codeforces</strong> and explore offensive security on <strong>TryHackMe</strong>, working toward a long-term goal in <strong>red team / cybersecurity</strong>.
+  </div>
+  <div class="about-stats">
+    <div class="stat"><div class="stat-n">5</div><div class="stat-l">Milestone</div></div>
+    <div class="stat"><div class="stat-n">42</div><div class="stat-l">Network</div></div>
+    <div class="stat"><div class="stat-n">C++</div><div class="stat-l">Primary lang</div></div>
+    <div class="stat"><div class="stat-n">MO</div><div class="stat-l">Morocco</div></div>
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <div class="sec-label">01 — Skills</div>
+  <div class="skills-grid">
+    <div class="skill-item">
+      <div class="skill-num">01</div>
+      <div class="skill-title">C / C++ Systems</div>
+      <div class="skill-desc">Memory, templates, OOP, STL — full 42 CPP track.</div>
+      <div class="skill-tags"><span class="stag">C++98</span><span class="stag">templates</span><span class="stag">STL</span></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-num">02</div>
+      <div class="skill-title">Web / HTTP</div>
+      <div class="skill-desc">HTTP/1.1 server from scratch — sockets, I/O, CGI.</div>
+      <div class="skill-tags"><span class="stag">TCP/IP</span><span class="stag">HTTP</span><span class="stag">CGI</span></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-num">03</div>
+      <div class="skill-title">DevOps / Docker</div>
+      <div class="skill-desc">Multi-container infra — NGINX, WordPress, MariaDB.</div>
+      <div class="skill-tags"><span class="stag">Docker</span><span class="stag">NGINX</span><span class="stag">Linux</span></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-num">04</div>
+      <div class="skill-title">Comp. Programming</div>
+      <div class="skill-desc">Weekly Codeforces — algorithms and data structures.</div>
+      <div class="skill-tags"><span class="stag">Codeforces</span><span class="stag">DSA</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="sec-label">02 — Projects</div>
+  <div class="proj-grid">
+    <div class="proj-card proj-featured">
+      <div class="proj-idx">C++ · Systems</div>
+      <div class="proj-name">Webserv</div>
+      <div class="proj-desc">HTTP/1.1 server in C++98 from scratch. Non-blocking I/O, config parser, CGI, virtual hosts.</div>
+      <a href="https://github.com/lsoubai/webserv" class="proj-link">github →</a>
+    </div>
+    <div class="proj-card proj-featured">
+      <div class="proj-idx">Docker · Infra</div>
+      <div class="proj-name">Inception</div>
+      <div class="proj-desc">Production-grade infra in containers: NGINX + TLS, WordPress/php-fpm, MariaDB — Docker Compose.</div>
+      <a href="https://github.com/lsoubai/inception" class="proj-link">github →</a>
+    </div>
+    <div class="proj-card">
+      <div class="proj-idx">C · Unix</div>
+      <div class="proj-name">Minishell</div>
+      <div class="proj-desc">A fully functional UNIX shell in C. Pipes, redirections, env vars, builtins, signal handling.</div>
+      <a href="https://github.com/lsoubai/minishell" class="proj-link">github →</a>
+    </div>
+    <div class="proj-card">
+      <div class="proj-idx">C · Graphics</div>
+      <div class="proj-name">MiniRT</div>
+      <div class="proj-desc">Ray tracer in C using minilibx. Spheres, planes, cylinders, lighting, shadows, reflections.</div>
+      <a href="https://github.com/lsoubai/miniRT" class="proj-link">github →</a>
+    </div>
+    <div class="proj-card">
+      <div class="proj-idx">C++ · Templates</div>
+      <div class="proj-name">CPP 00–09</div>
+      <div class="proj-desc">Full 42 C++ track — OOP, casts, RTTI, templates, STL, exceptions, iterators.</div>
+      <a href="https://github.com/lsoubai" class="proj-link">github →</a>
+    </div>
+    <div class="proj-card">
+      <div class="proj-idx">C · Core</div>
+      <div class="proj-name">Core Projects</div>
+      <div class="proj-desc">Libft, ft_printf, get_next_line, minitalk, pipex — the full 42 systems foundation.</div>
+      <a href="https://github.com/lsoubai" class="proj-link">github →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="sec-label">03 — Contact</div>
+  <div class="contact-grid">
+    <a href="mailto:lallasoubai0@gmail.com" class="c-item">
+      <div class="c-platform">Email</div>
+      <div class="c-handle">lallasoubai0@gmail.com</div>
+    </a>
+    <a href="https://github.com/lsoubai" target="_blank" class="c-item">
+      <div class="c-platform">GitHub</div>
+      <div class="c-handle">github.com/lsoubai</div>
+    </a>
+    <a href="https://linkedin.com/in/lalla-soubai" target="_blank" class="c-item">
+      <div class="c-platform">LinkedIn</div>
+      <div class="c-handle">lalla-soubai</div>
+    </a>
+    <a href="https://tryhackme.com/p/lsoubai" target="_blank" class="c-item">
+      <div class="c-platform">TryHackMe</div>
+      <div class="c-handle">tryhackme/lsoubai</div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-l">LALLA SOUBAI · 2025</div>
+  <div class="footer-r">1337 @ 42 NETWORK · MOROCCO</div>
+</footer>
+
+</div>
+</body>
+</html>
